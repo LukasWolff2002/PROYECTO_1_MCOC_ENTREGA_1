@@ -84,6 +84,8 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
     tolerance = 1e-6
     max_iterations = 100000
 
+    print(pd.DataFrame(potential))
+
     for it in range(max_iterations):
         potential_old = potential.copy()
     
@@ -167,6 +169,8 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
         if np.max(np.abs(potential - potential_old)) < tolerance:
             print(f"Convergencia alcanzada en {it} iteraciones")
             break
+
+    print(pd.DataFrame(potential))
 
     # Calcular el gradiente del potencial (flujo de velocidad)
     dy, dx = np.gradient(potential, dy, dx)
@@ -252,6 +256,6 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
     print(f'listo {nombre}')
     print('')
 
-laplace(caso_1, 'caso_1', 60, False, 0) #14 levels y 10 en el factor de correccion
-laplace(caso_2, 'caso_2', 60, False, 0) #14 levels y 10 en el factor de correccion
-laplace(caso_3, 'caso_3', 60, True, 30)
+laplace(caso_1, 'caso_1', 10, False, 0) #14 levels y 10 en el factor de correccion
+#laplace(caso_2, 'caso_2', 60, False, 0) #14 levels y 10 en el factor de correccion
+#laplace(caso_3, 'caso_3', 60, True, 30)

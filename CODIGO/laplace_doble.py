@@ -25,8 +25,8 @@ def laplace (caso, nombre, grilla, factor_correccion, factor):
     #print(dx,dy)
 
     #Defino algunas cosas
-    Potencial_incial = (C1+B1)*100 #Ingresar la altura de agua en cm
-    Potencial_final = (C2+B2)*100 #Ingresar la altura de agua en cm
+    Potencial_incial = (B1)*100 #Ingresar la altura de agua en cm
+    Potencial_final = (B2)*100 #Ingresar la altura de agua en cm
     print(f'El potencial inicial es {Potencial_incial}')
     print(f'El potencial final es {Potencial_final}')
     #Transformaciones a grillas
